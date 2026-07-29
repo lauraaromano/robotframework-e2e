@@ -1,0 +1,81 @@
+{
+  "user1": {
+    "title": "Mr",
+    "name": "Tomy Jobs",
+    "email": "tomyjobs@gmail.com",
+    "password": "123456",
+    "birth": {
+      "day": "5",
+      "month": "10",
+      "year": "1990"
+    },
+    "newsletter": true,
+    "offers": true,
+    "address": {
+      "firstName": "tomy",
+      "lastName": "Jobs",
+      "company": "Apple Inc.",
+      "adress": "1 Infinite Loop",
+      "address2": "Building A",
+      "country": "United States",
+      "state": "California",
+      "city": "Cupertino",
+      "zipcode": "95014",
+      "mobile": "+14089998888"
+    }
+  },
+  "existed_user": {
+    "title": "Mrs",
+    "name": "Sarah Connor",
+    "email": "sarahconnor@gmail.com",
+    "password": "654321",
+    "birth": {
+      "day": "12",
+      "month": "3",
+      "year": "1985"
+    },
+    "newsletter": false,
+    "offers": true,
+    "address": {
+      "firstName": "Sarah",
+      "lastName": "Connor",
+      "company": "Cyberdyne Systems",
+      "adress": "18144 El Camino Real",
+      "address2": "Suite 200",
+      "country": "India",
+      "state": "Maharashtra",
+      "city": "Mumbai",
+      "zipcode": "94087",
+      "mobile": "+14085551234"
+    }
+  },
+  "user2": {
+    "title": "Mrs",
+    "name": "Emily Carter",
+    "email": "emily.carter@gmail.com",
+    "password": "654321",
+    "birth": {
+        "day": "18",
+        "month": "7",
+        "year": "1995"
+    },
+    "newsletter": false,
+    "offers": true,
+    "address": {
+        "firstName": "Emily",
+        "lastName": "Carter",
+        "company": "Microsoft",
+        "adress": "1 Microsoft Way",
+        "address2": "Building 34",
+        "country": "United States",
+        "state": "Washington",
+        "city": "Redmond",
+        "zipcode": "98052",
+        "mobile": "+12065551234"
+        }
+    },
+    "wrongemail": {
+        "name": "Natalie",
+        "email": "natalie"
+    }
+}
