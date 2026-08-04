@@ -4,7 +4,12 @@ Library             Browser
 Library             JSONLibrary
 
 Resource           pages/SignupPage.resource
-Resource           pages/DeleteAccount.resource
+Resource           pages/LoginPage.resource
+Resource           pages/Header.resource
+
+
+
+
 
 Resource           pages/components/Alert.resource
 Resource           pages/components/FeedbackPage.resource

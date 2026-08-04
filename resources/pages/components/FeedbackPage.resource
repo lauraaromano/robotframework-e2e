@@ -10,3 +10,9 @@ Feedback is
 
     Wait For Elements State    text=${expected_text}    visible
 
+Page Should Be
+    [Arguments]    ${path}
+
+    ${current_url}=    Get Url
+    Should Be Equal    ${current_url}    ${BASE_URL}${path}
+

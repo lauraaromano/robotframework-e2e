@@ -6,8 +6,10 @@ Resource             ../env.resource
 
 *** Keywords ***
 
-Delete account
-    Click        css=a >> text=Delete Account
+Header
+    [Arguments]    ${text}    
+
+    Click        css=a >> text=${text}
 
 
 

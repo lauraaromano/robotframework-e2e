@@ -23,7 +23,7 @@ Deve poder cadastrar uma novo usuário
     Feedback is               Account Created!
     Continue
 
-    #deletanto usário
+    # #deletanto usário
     Delete account
     Feedback is              Account Deleted!
 
@@ -37,22 +37,50 @@ Não deve poder cadastrar uma usuário com email já existente
 
     Alert should be              Email Address already exist!
 
-COLOCAR CRREATE DICTIORANY NESSES CASOS ABAIXO
+Não deve poder cadastrar usuário caso no campo Email não tenha @
 
-# Não deve poder cadastrar usuário caso no campo Email não tenha @
+    ${user}         Create Dictionary    
+    ...    name=Hermione Gomes  
+    ...    email=hermione  
 
-# Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Name 
+    Go to signup page
+    Submit signup form           ${user}[name]    ${user}[email]
 
-# Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Email 
+    Validation Message Should Contain    [data-qa="signup-email"]    Inclua um "@" no endereço de e-mail
 
-# Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Name e Email
+Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Name 
 
-# Não deve poder cadastrar o usuário sem preencher todos os campos obrigatórios
-#     ${data}    Get fixture    users    user2 
+    ${user}         Create Dictionary    
+    ...    name=${EMPTY}  
+    ...    email=hermione@gmail.com  
 
-#     Go to signup page
+    Go to signup page
+    Submit signup form           ${user}[name]    ${user}[email]
 
-#     Submit signup form           ${data}[name]    ${data}[email]
-#     Enter Account Information    ${data}   
-#     Enter Address Information    ${data}
+    Validation Message Should Contain    css=input[name=name]    Preencha este campo.
+
+Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Email 
+
+    ${user}         Create Dictionary    
+    ...    name=Hermione Gomes  
+    ...    email=${EMPTY}  
+
+    Go to signup page
+    Submit signup form           ${user}[name]    ${user}[email]
+
+    Validation Message Should Contain    css=input[data-qa="signup-email"]     Preencha este campo.
+
+Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Name e Email
+
+    ${user}         Create Dictionary    
+    ...    name=${EMPTY}  
+    ...    email=${EMPTY}  
+ 
+
+    Go to signup page
+    Submit signup form           ${user}[name]    ${user}[email]
+
+    Validation Message Should Contain    css=input[name=name]    Preencha este campo.
+
+
 
