@@ -16,3 +16,8 @@ Page Should Be
     ${current_url}=    Get Url
     Should Be Equal    ${current_url}    ${BASE_URL}${path}
 
+Text Should Show	
+    [Arguments]    ${tag}    ${expected_text}
+
+        Wait For Elements State    css=${tag} >> text=${expected_text}    visible    timeout=20s
+

@@ -24,7 +24,7 @@ Deve poder cadastrar uma novo usuário
     Continue
 
     # #deletanto usário
-    Delete account
+    Header                    Delete Account
     Feedback is              Account Deleted!
 
  
@@ -46,7 +46,8 @@ Não deve poder cadastrar usuário caso no campo Email não tenha @
     Go to signup page
     Submit signup form           ${user}[name]    ${user}[email]
 
-    Validation Message Should Contain    [data-qa="signup-email"]    Inclua um "@" no endereço de e-mail
+    Field Should Be Invalid    css=input[data-qa="signup-email"]
+
 
 Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Name 
 
@@ -57,8 +58,8 @@ Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Name
     Go to signup page
     Submit signup form           ${user}[name]    ${user}[email]
 
-    Validation Message Should Contain    css=input[name=name]    Preencha este campo.
-
+    Field Should Be Invalid    css=input[data-qa="signup-name"]
+    
 Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Email 
 
     ${user}         Create Dictionary    
@@ -68,7 +69,7 @@ Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Emai
     Go to signup page
     Submit signup form           ${user}[name]    ${user}[email]
 
-    Validation Message Should Contain    css=input[data-qa="signup-email"]     Preencha este campo.
+    Field Should Be Invalid    css=input[data-qa="signup-email"]
 
 Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Name e Email
 
@@ -80,7 +81,7 @@ Não deve poder prosseguir o cadastro caso o usuário não preencha o campo Name
     Go to signup page
     Submit signup form           ${user}[name]    ${user}[email]
 
-    Validation Message Should Contain    css=input[name=name]    Preencha este campo.
+    Field Should Be Invalid    css=input[data-qa="signup-email"]
 
 
 

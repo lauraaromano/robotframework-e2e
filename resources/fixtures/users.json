@@ -40,13 +40,13 @@
       "firstName": "Sarah",
       "lastName": "Connor",
       "company": "Cyberdyne Systems",
-      "adress": "Cyberdyne Systems",
-      "address2": "Cyberdyne Systems",
-      "country": "India",
-      "state": "Maharashtra",
-      "city": "Mumbai",
-      "zipcode": "94087",
-      "mobile": "+14085551234"
+      "adress": "123 Maple Street",
+      "address2": "Apartment 402",
+      "country": "United States",
+      "state": "California",
+      "city": "Los Angeles",
+      "zipcode": "90001",
+      "mobile": "+2135551234"
     }
   },
   "user2": {

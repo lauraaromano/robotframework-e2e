@@ -6,15 +6,12 @@ Library             JSONLibrary
 Resource           pages/SignupPage.resource
 Resource           pages/LoginPage.resource
 Resource           pages/Header.resource
-
-
+Resource           pages/ContactPage.resource
 
 
 
 Resource           pages/components/Alert.resource
 Resource           pages/components/FeedbackPage.resource
-
-
 
 
 *** Keywords ***
@@ -36,3 +33,5 @@ Get fixture
 
 ${BROWSER}     chromium
 ${BASE_URL}    https://automationexercise.com
+
+${TEST_FILES_DIR}    ${CURDIR}${/}..${/}files

@@ -18,7 +18,7 @@ Deve realizar o logout com sucesso
 
     Page Should Be                /
 
-    Logout
+    Header                         Logout
 
     Page Should Be                /login
 

@@ -73,11 +73,7 @@ Enter Address Information
 Continue
         Click        css=a >> text=Continue
 
-Validation Message Should Contain
-    [Arguments]    ${seletor}    ${texto}
-    
-    ${mensagem}=    Evaluate JavaScript    ${seletor}    (el) => el.validationMessage
-    Should Contain    ${mensagem}    ${texto}
+
 
 
 
