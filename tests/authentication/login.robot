@@ -49,7 +49,7 @@ Não deve realizar o login se o campo email não for preenchido
     Go to signup page
     Submit login form            ${user}[email]    ${user}[password]
     
-    Field Should Be Invalid    css=input[data-qa="login-email"]
+    Field Should Be Invalid     css=input[data-qa="login-email"]
 
 Não deve realizar o login se o campo senha não for preenchido
 
@@ -71,7 +71,7 @@ Não deve realizar o login se o campo email e senha não forem preenchidos
     Go to signup page
     Submit login form            ${user}[email]    ${user}[password]
     
-    Field Should Be Invalid    css=input[data-qa="login-email"]
+    Field Should Be Invalid      css=input[data-qa="login-email"]
 
 Caso o usuário tentar logar preenchendo campo email sem o @, deverá aparecer um aviso
 
@@ -82,4 +82,4 @@ Caso o usuário tentar logar preenchendo campo email sem o @, deverá aparecer u
     Go to signup page
     Submit login form            ${user}[email]    ${user}[password]
     
-    Field Should Be Invalid    css=input[data-qa="login-email"]
+    Field Should Be Invalid     css=input[data-qa="login-email"]

@@ -24,5 +24,4 @@ Attach File To Contact Form
     Upload File By Selector    ${selector}    ${caminho}
 
 Submit
-
-    Click        css=input[type=submit] >> text=Submit
+    Click        css=[name=submit] >> text=Submit

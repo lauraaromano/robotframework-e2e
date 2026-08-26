@@ -7,6 +7,8 @@ Resource           pages/SignupPage.resource
 Resource           pages/LoginPage.resource
 Resource           pages/Header.resource
 Resource           pages/ContactPage.resource
+Resource           pages/CartPage.resource
+
 
 
 

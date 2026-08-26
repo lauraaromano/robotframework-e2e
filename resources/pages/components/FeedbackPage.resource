@@ -21,3 +21,7 @@ Text Should Show
 
         Wait For Elements State    css=${tag} >> text=${expected_text}    visible    timeout=20s
 
+Text Should Be Visible  
+    [Arguments]    ${expected_text}
+
+   Wait For Elements State    text=${expected_text}    visible    timeout=20s
