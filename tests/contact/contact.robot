@@ -6,7 +6,7 @@ Library                JSONLibrary
 Resource                 ../../resources/base.resource
 
 Test Setup            Start Session
-# Test Teardown         Take Screenshot
+Test Teardown         Take Screenshot
 
 *** Test Cases ***
 Deve enviar uma mensagem de contato com sucesso
@@ -18,12 +18,8 @@ Deve enviar uma mensagem de contato com sucesso
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
 
-    Go to signup page
-
-    Submit login form            ${data}[email]    ${data}[password]
-
-    Page Should Be                /
-
+    Login With Existing User    
+    
     Header                     Contact us
     
     Submit contact form    ${form_contact}[name]    ${form_contact}[email]    ${form_contact}[subject]     ${form_contact}[message]      
@@ -42,11 +38,7 @@ Deve enviar uma mensagem de contato sem preencher o campo nome
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
 
-    Go to signup page
-
-    Submit login form            ${data}[email]    ${data}[password]
-
-    Page Should Be                /
+    Login With Existing User    
 
     Header                     Contact us
     
@@ -67,11 +59,7 @@ Deve tentar enviar uma mensagem de contato sem preencher o campo email
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
 
-    Go to signup page
-
-    Submit login form            ${data}[email]    ${data}[password]
-
-    Page Should Be                /
+    Login With Existing User    
 
     Header                     Contact us
     
@@ -92,11 +80,7 @@ Deve tentar enviar uma mensagem de contato sem preencher o campo com "@"
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
 
-    Go to signup page
-
-    Submit login form            ${data}[email]    ${data}[password]
-
-    Page Should Be                /
+    Login With Existing User    
 
     Header                     Contact us
     
@@ -116,11 +100,7 @@ Deve enviar uma mensagem de contato sem preencher o campo Subject
     ...    email=sarahconnor@gmail.com
     ...    message=Dúvida sobre cadastro
 
-    Go to signup page
-
-    Submit login form            ${data}[email]    ${data}[password]
-
-    Page Should Be                /
+    Login With Existing User    
 
     Header                     Contact us
     
@@ -140,11 +120,7 @@ Deve enviar uma mensagem de contato sem preencher o campo Message
     ...    email=sarahconnor@gmail.com
     ...    subject=Dúvida sobre cadastro
 
-    Go to signup page
-
-    Submit login form            ${data}[email]    ${data}[password]
-
-    Page Should Be                /
+    Login With Existing User    
 
     Header                     Contact us
     
@@ -165,11 +141,7 @@ Deve enviar uma mensagem de contato sem selecionar nenhum arquivo
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
 
-    Go to signup page
-
-    Submit login form            ${data}[email]    ${data}[password]
-
-    Page Should Be                /
+    Login With Existing User    
 
     Header                     Contact us
     

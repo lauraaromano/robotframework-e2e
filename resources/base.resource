@@ -30,6 +30,15 @@ Get fixture
 
     RETURN    ${data}[${scenario}]
 
+Login With Existing User
+    ${data}    Get fixture    users    existed_user
+
+    Go to signup page
+
+    Submit login form            ${data}[email]    ${data}[password]
+
+    Page Should Be                /
+
 
 *** Variables ***
 
