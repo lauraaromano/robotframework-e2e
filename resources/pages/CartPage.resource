@@ -62,7 +62,21 @@ Clear Cart
     END
 
 
+Add Product And Validate Quantity
+    [Arguments]    ${product_id}
+    FOR    ${vez}    IN RANGE    1    4
+        Header    Products
 
+        Hover And Add Product To Cart
+        ...    css=.product-image-wrapper >> nth=0
+        ...    css=.productinfo .add-to-cart >> nth=0
+
+        Continue Shopping
+
+        Header    "Cart"
+
+        Product Quantity Should Be    ${product_id}    ${vez}
+    END
 
 
 

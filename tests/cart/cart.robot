@@ -156,24 +156,41 @@ Deve exibir a quantidade correta de cada produto no carrinho
 
     ${product_id}=    Get Attribute    css=.product-image-wrapper >> nth=0 >> css=.productinfo .add-to-cart    data-product-id
 
-    FOR    ${vez}    IN RANGE    1    4
-        Header                      Products
+    Add Product And Validate Quantity    ${product_id}
 
-        Hover And Add Product To Cart    css=.product-image-wrapper >> nth=0    css=.productinfo .add-to-cart >> nth=0
+Deve exibir mensagem de carrinho vazio quando nenhum produto foi adicionado
+    Login With Existing User
 
-        Continue Shopping
+    Header                       "Cart"
 
-        Header                       "Cart"
+    Clear Cart
 
-        Product Quantity Should Be    ${product_id}    ${vez}
-    END
+    Header                       "Cart"
 
+    Text Should Show    b    	Cart is empty!
 
+Deve manter os produtos no carrinho após navegar para outra página do site
+    ${data} =    Get fixture    users    existed_user
 
-# Deve calcular o preço total corretamente com base nos produtos adicionados
-# Deve exibir mensagem de carrinho vazio quando nenhum produto foi adicionado
-# Deve adicionar o mesmo produto duas vezes e somar a quantidade corretamente
-# Deve manter os produtos no carrinho após navegar para outra página do site
+    Login With Existing User    
+
+    Header                      Products
+
+    Get Product Name    css=.product-image-wrapper >> nth=0 >> css=.productinfo p
+
+    ${product_id}=    Get Attribute    css=.product-image-wrapper >> nth=0 >> css=.productinfo .add-to-cart    data-product-id
+
+    Hover And Add Product To Cart    css=.product-image-wrapper >> nth=0    css=.productinfo .add-to-cart >> nth=0
+
+    Continue Shopping
+    Header                       "Home"
+
+    Click    css=a[href="/test_cases"] >> nth=0    
+    Click    css=.panel-group >> nth=3                    
+
+    Header                       "Cart"
+    Product in Cart Validation    css=[id=product-${product_id}] >> css=.cart_description h4 a    ${product_name}
+    
 # Deve permitir continuar comprando a partir do carrinho (voltar para produtos)
 # Deve exibir corretamente nome, preço e imagem de cada produto no carrinho
 # Deve exibir corretamente o preço de um produto que foi adicionado no carrinho de acorod com seu preço e quantidade(preco x quantidade = total)
