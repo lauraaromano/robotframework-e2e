@@ -8,6 +8,8 @@ Resource           pages/LoginPage.resource
 Resource           pages/Header.resource
 Resource           pages/ContactPage.resource
 Resource           pages/CartPage.resource
+Resource           pages/CheckoutPage.resource
+
 
 
 

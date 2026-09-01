@@ -2,6 +2,7 @@
 Documentation        Elementos e ações da página de cadastro
 
 Library              Browser
+Library              String
 Resource             ../env.resource
 
 *** Keywords ***
@@ -78,6 +79,27 @@ Add Product And Validate Quantity
         Product Quantity Should Be    ${product_id}    ${vez}
     END
 
+Validate Cart Product Total
+    [Arguments]    ${product_id}
 
+    ${price}=       Get Text    css=[id=product-${product_id}] >> .cart_price p
+    ${quantity}=    Get Text    css=[id=product-${product_id}] >> .cart_quantity button
+    ${total}=       Get Text    css=[id=product-${product_id}] >> .cart_total p
+
+    Log    Price: ${price}
+    Log    Quantity: ${quantity}
+    Log    Total: ${total}
+
+    ${price}=       Remove String    ${price}    Rs.
+    ${price}=       Convert To Number    ${price}
+
+    ${quantity}=    Convert To Integer    ${quantity}
+
+    ${total}=       Remove String    ${total}    Rs.
+    ${total}=       Convert To Number    ${total}
+
+    ${calculated_total}=    Evaluate    ${price} * ${quantity}
+
+    Should Be Equal As Numbers    ${total}    ${calculated_total}
 
 

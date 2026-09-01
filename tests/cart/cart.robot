@@ -191,9 +191,89 @@ Deve manter os produtos no carrinho após navegar para outra página do site
     Header                       "Cart"
     Product in Cart Validation    css=[id=product-${product_id}] >> css=.cart_description h4 a    ${product_name}
     
-# Deve permitir continuar comprando a partir do carrinho (voltar para produtos)
-# Deve exibir corretamente nome, preço e imagem de cada produto no carrinho
-# Deve exibir corretamente o preço de um produto que foi adicionado no carrinho de acorod com seu preço e quantidade(preco x quantidade = total)
+
+Deve calcular corretamente o preço total do produto no carrinho com base no preço unitário e na quantidade (preço × quantidade = total).
+    ${data} =    Get fixture    users    existed_user
+
+    Login With Existing User    
+
+    Header                      Products
+
+    # Produto 1
+
+    Get Product Name    css=.product-image-wrapper >> nth=0 >> css=.productinfo p
+    ${product_name_1}=    Set Variable    ${product_name}
+
+    ${product_id_1}=    Get Attribute
+    ...    css=.product-image-wrapper >> nth=0 >> css=.productinfo .add-to-cart
+    ...    data-product-id
+
+    Hover And Add Product To Cart
+    ...    css=.product-image-wrapper >> nth=0
+    ...    css=.productinfo .add-to-cart >> nth=0
+
+    Continue Shopping
+
+    # Adiciona Produto 1 novamente
+
+    Hover And Add Product To Cart
+    ...    css=.product-image-wrapper >> nth=0
+    ...    css=.productinfo .add-to-cart >> nth=0
+
+    Continue Shopping
 
 
-#COLOCAR NO DOCS
+    # Produto 2
+
+    Get Product Name    css=.product-image-wrapper >> nth=1 >> css=.productinfo p
+    ${product_name_2}=    Set Variable    ${product_name}
+
+    ${product_id_2}=    Get Attribute
+    ...    css=.product-image-wrapper >> nth=1 >> css=.productinfo .add-to-cart
+    ...    data-product-id
+
+    Hover And Add Product To Cart
+    ...    css=.product-image-wrapper >> nth=1
+    ...    css=.productinfo .add-to-cart >> nth=1
+
+    Continue Shopping
+
+    # Adiciona Produto 2 novamente
+
+    Hover And Add Product To Cart
+    ...    css=.product-image-wrapper >> nth=1
+    ...    css=.productinfo .add-to-cart >> nth=1
+
+    Continue Shopping
+
+    # Adiciona Produto 2 pela terceira vez
+
+    Hover And Add Product To Cart
+    ...    css=.product-image-wrapper >> nth=1
+    ...    css=.productinfo .add-to-cart >> nth=1
+
+    Continue Shopping
+
+
+    # Produto 3
+
+    Get Product Name    css=.product-image-wrapper >> nth=2 >> css=.productinfo p
+    ${product_name_3}=    Set Variable    ${product_name}
+
+    ${product_id_3}=    Get Attribute
+    ...    css=.product-image-wrapper >> nth=2 >> css=.productinfo .add-to-cart
+    ...    data-product-id
+
+    Hover And Add Product To Cart
+    ...    css=.product-image-wrapper >> nth=2
+    ...    css=.productinfo .add-to-cart >> nth=2
+
+    Continue Shopping
+
+
+    Header    "Cart"
+
+    Validate Cart Product Total    ${product_id_1}
+    Validate Cart Product Total    ${product_id_2}
+    Validate Cart Product Total    ${product_id_3}
+
