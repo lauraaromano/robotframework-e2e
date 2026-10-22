@@ -10,10 +10,6 @@ Resource           pages/ContactPage.resource
 Resource           pages/CartPage.resource
 Resource           pages/CheckoutPage.resource
 
-
-
-
-
 Resource           pages/components/Alert.resource
 Resource           pages/components/FeedbackPage.resource
 
