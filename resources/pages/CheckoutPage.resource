@@ -89,6 +89,8 @@ DownloadInvoice
     Click
     ...    css=a >> text=Download Invoice
 
-
+Assert the Cart is Empty
+    Header    "Cart"
+    Text Should Show    b    	Cart is empty!
 
 

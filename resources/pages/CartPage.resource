@@ -62,7 +62,6 @@ Clear Cart
         Click    css=.cart_delete a >> nth=0
     END
 
-
 Add Product And Validate Quantity
     [Arguments]    ${product_id}
     FOR    ${vez}    IN RANGE    1    4
@@ -101,5 +100,3 @@ Validate Cart Product Total
     ${calculated_total}=    Evaluate    ${price} * ${quantity}
 
     Should Be Equal As Numbers    ${total}    ${calculated_total}
-
-

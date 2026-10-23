@@ -2,25 +2,18 @@
 Documentation            Cenários de login de usuários
 
 Library                JSONLibrary
-
 Resource                 ../../resources/base.resource
 
-Test Setup            Start Session
+Test Setup            Prepare Contact Test
 Test Teardown         Take Screenshot
 
 *** Test Cases ***
-Deve enviar uma mensagem de contato com sucesso
-    ${data}    Get fixture    users    existed_user 
-
+Deve enviar uma mensagem de contato com sucesso 
     ${form_contact}         Create Dictionary    
     ...    name=Sarah  
     ...    email=sarahconnor@gmail.com
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
-
-    Login With Existing User    
-    
-    Header                     Contact us
     
     Submit contact form    ${form_contact}[name]    ${form_contact}[email]    ${form_contact}[subject]     ${form_contact}[message]      
 
@@ -31,16 +24,10 @@ Deve enviar uma mensagem de contato com sucesso
     Confirm Native Alert
 
 Deve enviar uma mensagem de contato sem preencher o campo nome
-    ${data}    Get fixture    users    existed_user 
-
     ${form_contact}         Create Dictionary      
     ...    email=sarahconnor@gmail.com
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
-
-    Login With Existing User    
-
-    Header                     Contact us
     
     Submit contact form    ${EMPTY}    ${form_contact}[email]    ${form_contact}[subject]    ${form_contact}[message]
 
@@ -52,16 +39,10 @@ Deve enviar uma mensagem de contato sem preencher o campo nome
 
 
 Deve tentar enviar uma mensagem de contato sem preencher o campo email
-    ${data}    Get fixture    users    existed_user 
-
     ${form_contact}         Create Dictionary    
     ...    name=Sarah  
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
-
-    Login With Existing User    
-
-    Header                     Contact us
     
     Submit contact form    ${form_contact}[name]    ${EMPTY}    ${form_contact}[subject]    ${form_contact}[message]
 
@@ -72,17 +53,11 @@ Deve tentar enviar uma mensagem de contato sem preencher o campo email
     Field Should Be Invalid    css=input[data-qa="email"]
 
 Deve tentar enviar uma mensagem de contato sem preencher o campo com "@"
-    ${data}    Get fixture    users    existed_user 
-
     ${form_contact}         Create Dictionary    
     ...    name=Sarah  
     ...    email=sarahconnorgmail.com
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
-
-    Login With Existing User    
-
-    Header                     Contact us
     
     Submit contact form    ${form_contact}[name]    ${form_contact}[email]    ${form_contact}[subject]     ${form_contact}[message]      
 
@@ -93,16 +68,10 @@ Deve tentar enviar uma mensagem de contato sem preencher o campo com "@"
     Confirm Native Alert
 
 Deve enviar uma mensagem de contato sem preencher o campo Subject
-    ${data}    Get fixture    users    existed_user 
-
     ${form_contact}         Create Dictionary    
     ...    name=Sarah  
     ...    email=sarahconnor@gmail.com
     ...    message=Dúvida sobre cadastro
-
-    Login With Existing User    
-
-    Header                     Contact us
     
     Submit contact form    ${form_contact}[name]    ${form_contact}[email]    ${EMPTY}    ${form_contact}[message]
 
@@ -113,16 +82,10 @@ Deve enviar uma mensagem de contato sem preencher o campo Subject
     Confirm Native Alert
 
 Deve enviar uma mensagem de contato sem preencher o campo Message
-    ${data}    Get fixture    users    existed_user 
-
     ${form_contact}         Create Dictionary    
     ...    name=Sarah  
     ...    email=sarahconnor@gmail.com
     ...    subject=Dúvida sobre cadastro
-
-    Login With Existing User    
-
-    Header                     Contact us
     
     Submit contact form    ${form_contact}[name]    ${form_contact}[email]    ${form_contact}[subject]    ${EMPTY}
 
@@ -133,20 +96,21 @@ Deve enviar uma mensagem de contato sem preencher o campo Message
     Confirm Native Alert
 
 Deve enviar uma mensagem de contato sem selecionar nenhum arquivo
-    ${data}    Get fixture    users    existed_user 
-
     ${form_contact}         Create Dictionary    
     ...    name=Sarah  
     ...    email=sarahconnor@gmail.com
     ...    subject=Dúvida sobre cadastro
     ...    message=Dúvida sobre cadastro
-
-    Login With Existing User    
-
-    Header                     Contact us
     
     Submit contact form    ${form_contact}[name]    ${form_contact}[email]    ${form_contact}[subject]     ${form_contact}[message]      
 
     Submit  
 
     Confirm Native Alert
+
+*** Keywords ***
+Prepare Contact Test
+    Start Session
+    ${data}=    Get fixture    users    existed_user
+    Login With Existing User    
+    Header                     Contact us
