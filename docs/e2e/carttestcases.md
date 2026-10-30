@@ -2,7 +2,7 @@
 
 ## Cart
 
-### CT-001 — Adicionar um produto ao carrinho com sucesso
+### CT-015 — Adicionar um produto ao carrinho com sucesso
 
 **Objetivo:**  
 Validar se o usuário consegue adicionar um produto ao carrinho e se o produto adicionado é exibido corretamente no carrinho.
@@ -34,7 +34,7 @@ O produto deve ser adicionado com sucesso e exibido corretamente no carrinho.
 
 ---
 
-### CT-002 — Adicionar múltiplos produtos ao carrinho
+### CT-016 — Adicionar múltiplos produtos ao carrinho
 
 **Objetivo:**  
 Validar se o usuário consegue adicionar múltiplos produtos ao carrinho e se todos são exibidos corretamente.
@@ -73,7 +73,7 @@ Os três produtos devem ser adicionados com sucesso e exibidos corretamente no c
 
 ---
 
-### CT-003 — Remover um produto do carrinho
+### CT-017 — Remover um produto do carrinho
 
 **Objetivo:**  
 Validar se o usuário consegue remover um produto do carrinho.
@@ -106,7 +106,7 @@ O produto deve ser removido com sucesso e não deve mais estar presente no carri
 
 ---
 
-### CT-004 — Remover todos os produtos e exibir o carrinho vazio
+### CT-018 — Remover todos os produtos e exibir o carrinho vazio
 
 **Objetivo:**  
 Validar se o usuário consegue remover todos os produtos adicionados e se o carrinho apresenta corretamente o estado vazio.
@@ -147,7 +147,7 @@ Todos os produtos devem ser removidos com sucesso e o sistema deve exibir a mens
 
 ---
 
-### CT-005 — Exibir a quantidade correta de cada produto no carrinho
+### CT-019 — Exibir a quantidade correta de cada produto no carrinho
 
 **Objetivo:**  
 Validar se o carrinho exibe corretamente a quantidade do produto adicionado.
@@ -179,7 +179,7 @@ A quantidade exibida no carrinho deve corresponder à quantidade do produto adic
 
 ---
 
-### CT-006 — Exibir mensagem de carrinho vazio quando nenhum produto foi adicionado
+### CT-020 — Exibir mensagem de carrinho vazio quando nenhum produto foi adicionado
 
 **Objetivo:**  
 Validar se o sistema exibe corretamente a mensagem de carrinho vazio quando não existem produtos adicionados.
@@ -208,7 +208,7 @@ O sistema deve exibir a mensagem **"Cart is empty!"**.
 
 ---
 
-### CT-007 — Manter os produtos no carrinho após navegar para outra página do site
+### CT-021 — Manter os produtos no carrinho após navegar para outra página do site
 
 **Objetivo:**  
 Validar se o produto permanece no carrinho após o usuário navegar para outra página do site.
@@ -242,7 +242,7 @@ O produto adicionado deve permanecer no carrinho após a navegação para outras
 
 ---
 
-### CT-008 — Calcular corretamente o preço total do produto no carrinho
+### CT-022 — Calcular corretamente o preço total do produto no carrinho
 
 **Objetivo:**  
 Validar se o preço total de cada produto no carrinho é calculado corretamente com base no preço unitário e na quantidade.

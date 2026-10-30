@@ -1,0 +1,14 @@
+{
+    "products": {
+        "product_1": "Blue Top",
+        "product_2": "Pure Cotton V-Neck T-Shirt",
+        "product_3": "Sleeveless Unicorn Patch Gown - Pink",
+        "maiuscula_product": "BLUE TOP",
+        "partial_product": "Blue"
+    },
+    "non-existentProduct": {
+        "product_1": "Colorful Printed Dress",
+        "product_2": "Floral Print Maxi Dress",
+        "special_character_product": "@#$%^&*()"
+    }
+}
